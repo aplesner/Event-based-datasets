@@ -3,7 +3,7 @@ from src.push_to_hf import push_to_huggingface
 
 datasets_to_process = [
     # Datasets.ASL,
-    # Datasets.CIFAR10DVS,
+    Datasets.CIFAR10DVS,
     # Datasets.DVSGesture,
     Datasets.DVSLip,
     Datasets.NCALTECH101,
