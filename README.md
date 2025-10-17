@@ -20,13 +20,13 @@ This section contains references to the original datasets used in this project. 
 
 ### Original Datasets
 
-ALS: https://github.com/PIX2NVS/NVS2Graph
-CIFAR10 DVS: https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2017.00309/full
-DVSGestures: https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system
-DVSLip: https://sites.google.com/view/event-based-lipreading
-NCALTECH101: https://www.garrickorchard.com/datasets/n-caltech101
-NMNIST: https://www.garrickorchard.com/datasets/n-mnist
-Poker DVS: http://www2.imse-cnm.csic.es/caviar/POKERDVS.html
+- ALS: https://github.com/PIX2NVS/NVS2Graph
+- CIFAR10 DVS: https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2017.00309/full
+- DVSGestures: https://research.ibm.com/publications/a-low-power-fully-event-based-gesture-recognition-system
+- DVSLip: https://sites.google.com/view/event-based-lipreading
+- NCALTECH101: https://www.garrickorchard.com/datasets/n-caltech101
+- NMNIST: https://www.garrickorchard.com/datasets/n-mnist
+- Poker DVS: http://www2.imse-cnm.csic.es/caviar/POKERDVS.html
 
 ---
 
