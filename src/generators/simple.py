@@ -7,6 +7,7 @@ These datasets have straightforward structure:
 """
 
 import os
+from typing import Generator
 import tqdm
 from ..constants import Datasets
 from ..dataset_configs import get_config
@@ -18,7 +19,7 @@ def generate_simple_samples(
     dataset_value: str,
     split_filter: str | None = None,
     dataset_enum: Datasets | None = None,
-) -> dict:
+) -> Generator[dict, None, None]:
     """
     Generate samples for simple datasets.
 
@@ -47,7 +48,7 @@ def generate_simple_samples(
         yield from _generate_nmnist(data_dir, dataset_value, loader, split_filter, config)
 
 
-def _generate_pokerdvs(data_dir: str, dataset_value: str, loader) -> dict:
+def _generate_pokerdvs(data_dir: str, dataset_value: str, loader) -> Generator[dict, None, None]:
     """Generate PokerDVS samples."""
     poker_dvs_path = os.path.join(data_dir, dataset_value)
     files = sorted(os.listdir(poker_dvs_path))
@@ -59,7 +60,7 @@ def _generate_pokerdvs(data_dir: str, dataset_value: str, loader) -> dict:
         yield convert_to_sample_dict(data, label, {'inverted': inverted})
 
 
-def _generate_ncaltech101(data_dir: str, dataset_value: str, loader) -> dict:
+def _generate_ncaltech101(data_dir: str, dataset_value: str, loader) -> Generator[dict, None, None]:
     """Generate N-Caltech101 samples."""
     base_path = os.path.join(data_dir, dataset_value)
 
@@ -75,7 +76,7 @@ def _generate_ncaltech101(data_dir: str, dataset_value: str, loader) -> dict:
             yield convert_to_sample_dict(data, class_name)
 
 
-def _generate_dvslip(data_dir: str, dataset_value: str, loader, split_filter: str | None) -> dict:
+def _generate_dvslip(data_dir: str, dataset_value: str, loader, split_filter: str | None) -> Generator[dict, None, None]:
     """Generate DVS-Lip samples."""
     for split in ["train", "test"]:
         if split_filter and split != split_filter:
@@ -92,7 +93,7 @@ def _generate_dvslip(data_dir: str, dataset_value: str, loader, split_filter: st
                 yield convert_to_sample_dict(data, class_name)
 
 
-def _generate_nmnist(data_dir: str, dataset_value: str, loader, split_filter: str | None, config: dict) -> dict:
+def _generate_nmnist(data_dir: str, dataset_value: str, loader, split_filter: str | None, config: dict) -> Generator[dict, None, None]:
     """Generate N-MNIST samples."""
     split_dirs = config.get('split_dirs', {'train': 'Train', 'test': 'Test'})
     num_classes = config.get('num_classes', 10)

@@ -3,6 +3,7 @@ Generator for CIFAR10-DVS dataset.
 """
 
 import os
+from typing import Generator
 import tqdm
 from ..dataset_configs import get_config, CIFAR10_CLASSES
 from ..constants import Datasets
@@ -13,7 +14,7 @@ def generate_cifar10dvs_samples(
     data_dir: str,
     dataset_value: str,
     split_filter: str | None = None,
-) -> dict:
+) -> Generator[dict, None, None]:
     """
     Generate CIFAR10-DVS samples.
 

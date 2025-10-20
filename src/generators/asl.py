@@ -5,6 +5,8 @@ Special handling: Processes by subject to avoid out-of-memory issues.
 """
 
 import os
+from typing import Generator
+
 import tqdm
 from ..dataset_configs import get_config
 from ..constants import Datasets
@@ -16,7 +18,7 @@ def generate_asl_samples(
     dataset_value: str,
     split_filter: str | None = None,
     subject_filter: int | None = None,
-) -> dict:
+) -> Generator[dict, None, None]:
     """
     Generate ASL-DVS samples.
 

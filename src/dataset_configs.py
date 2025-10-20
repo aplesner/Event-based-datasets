@@ -78,7 +78,7 @@ DATASET_CONFIGS = {
 }
 
 
-def get_config(dataset: Datasets) -> dict:
+def get_config(dataset: Datasets | None) -> dict:
     """Get configuration for a dataset."""
     if dataset not in DATASET_CONFIGS:
         raise ValueError(f"No configuration found for dataset: {dataset}")

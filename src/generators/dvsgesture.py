@@ -6,6 +6,8 @@ Each segment is extracted based on CSV labels and yielded as a separate sample.
 """
 
 import os
+from typing import Generator
+
 import numpy as np
 import pandas as pd
 import tqdm
@@ -18,7 +20,7 @@ def generate_dvsgesture_samples(
     data_dir: str,
     dataset_value: str,
     split_filter: str | None = None,
-) -> dict:
+) -> Generator[dict, None, None]:
     """
     Generate DVS-Gesture samples.
 
@@ -67,7 +69,7 @@ def generate_dvsgesture_samples(
         yield from _process_dvsgesture_file(filepath, loader, split)
 
 
-def _process_dvsgesture_file(filepath: str, loader, split: str) -> dict:
+def _process_dvsgesture_file(filepath: str, loader, split: str) -> Generator[dict, None, None]:
     """
     Process a single DVS-Gesture file and yield multiple samples.
 

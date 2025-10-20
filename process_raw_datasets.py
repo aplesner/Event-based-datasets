@@ -2,13 +2,13 @@ from src.constants import Datasets
 from src.push_to_hf import push_to_huggingface
 
 datasets_to_process = [
-    # Datasets.ASL,
-    Datasets.CIFAR10DVS,
-    # Datasets.DVSGesture,
-    Datasets.DVSLip,
-    Datasets.NCALTECH101,
-    Datasets.NMNIST,
     # Datasets.POKERDVS,
+    # Datasets.DVSGesture,
+    # Datasets.DVSLip,
+    # Datasets.NCALTECH101,
+    # Datasets.NMNIST,
+    Datasets.CIFAR10DVS,
+    Datasets.ASL,
 ]
 
 for dataset_name in datasets_to_process:
