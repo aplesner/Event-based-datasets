@@ -6,6 +6,9 @@ __pycache__/
 # Datasets
 datasets/
 
+# Singularity image files
+*.sif
+
 # C extensions
 *.so
 

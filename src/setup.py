@@ -1,11 +1,15 @@
 from setuptools import setup, Extension
 from Cython.Build import cythonize
 import numpy as np
+import os
+
+# Get the directory containing this setup.py file
+setup_dir = os.path.dirname(os.path.abspath(__file__))
 
 extensions = [
     Extension(
         "load_data",
-        ["load_data.pyx"],
+        [os.path.join(setup_dir, "load_data.pyx")],
         include_dirs=[np.get_include()],
         extra_compile_args=['-O3'],
     ),
